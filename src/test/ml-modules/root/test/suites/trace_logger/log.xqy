@@ -108,7 +108,7 @@ let $log-entries :=
 return (
     test:assert-equal(1, fn:count($log-entries)),
 
-    let $payload := fn:substring($log-entries, (fn:string-length($log:PROJECT_NAME)+54)
+    let $payload := fn:substring($log-entries, (fn:string-length($log:PROJECT_NAME)+54))
     let $json-response := xdmp:to-json(xdmp:unquote($payload))
     return (
         test:assert-equal($what, xs:string($json-response/what)),

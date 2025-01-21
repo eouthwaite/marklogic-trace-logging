@@ -5,7 +5,7 @@ module namespace log = "https://pubs.cas.org/modules/lib/logger";
 declare namespace xdmp = "http://marklogic.com/xdmp";
 declare namespace map = "http://marklogic.com/xdmp/map";
 
-declare variable $log:PROJECT_NAME := "%%traceProject%%";
+declare variable $log:PROJECT_NAME := fn:upper-case("%%traceProject%%");
 
 declare function log:normalize-username($username as xs:string) as xs:string {
     fn:lower-case($username)
